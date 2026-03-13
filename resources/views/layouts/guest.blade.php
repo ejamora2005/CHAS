@@ -50,9 +50,11 @@
             .auth-shell {
                 min-height: 100vh;
                 display: flex;
+                flex-direction: column;
                 justify-content: center;
                 align-items: center;
                 padding: 2rem 1rem;
+                gap: 0.95rem;
             }
 
             .auth-card {
@@ -326,6 +328,27 @@
                 color: rgba(229, 255, 247, 0.82);
             }
 
+            .guest-footer {
+                width: min(35.5rem, 100%);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 0.55rem;
+                flex-wrap: wrap;
+                font-size: 0.76rem;
+                font-weight: 600;
+                color: #426773;
+            }
+
+            .guest-footer a {
+                color: inherit;
+                text-decoration: none;
+            }
+
+            .guest-footer a:hover {
+                text-decoration: underline;
+            }
+
             @keyframes auth-card-in {
                 from {
                     opacity: 0;
@@ -408,6 +431,14 @@
                     </div>
                 @endif
             </section>
+
+            <footer class="guest-footer">
+                <span>&copy; {{ date('Y') }} Campus Health Appointment System</span>
+                <span>|</span>
+                <a href="{{ route('login') }}">Login</a>
+                <span>|</span>
+                <a href="{{ route('register') }}">Register</a>
+            </footer>
         </main>
     </body>
 </html>

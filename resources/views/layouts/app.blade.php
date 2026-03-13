@@ -15,7 +15,7 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100">
+        <div class="min-h-screen bg-gray-100 flex flex-col">
             @include('layouts.navigation')
 
             <!-- Page Heading -->
@@ -28,9 +28,20 @@
             @endif
 
             <!-- Page Content -->
-            <main>
+            <main class="flex-1">
                 {{ $slot }}
             </main>
+
+            <footer class="border-t border-gray-200 bg-white/90 backdrop-blur">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-wrap items-center justify-between gap-3 text-xs text-gray-600">
+                    <p class="font-semibold">&copy; {{ date('Y') }} Campus Health Appointment System</p>
+                    <nav class="flex items-center gap-2.5">
+                        <a href="{{ route('dashboard') }}" class="hover:text-sky-700">Dashboard</a>
+                        <span>|</span>
+                        <a href="{{ route('profile.edit') }}" class="hover:text-sky-700">Profile</a>
+                    </nav>
+                </div>
+            </footer>
         </div>
     </body>
 </html>

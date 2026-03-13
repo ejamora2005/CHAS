@@ -199,6 +199,119 @@
                 color: rgba(233, 255, 248, 0.92);
             }
 
+            .stats-grid {
+                display: grid;
+                grid-template-columns: repeat(4, minmax(0, 1fr));
+                gap: 0.75rem;
+            }
+
+            .stat-card {
+                border: 1px solid var(--card-border);
+                border-radius: 0.85rem;
+                padding: 0.85rem 0.9rem;
+                background: linear-gradient(150deg, #ffffff 0%, #e8f6ff 100%);
+                box-shadow: 0 10px 20px rgba(18, 59, 79, 0.1);
+            }
+
+            .stat-label {
+                margin: 0;
+                font-size: 0.76rem;
+                font-weight: 600;
+                color: #3d6277;
+            }
+
+            .stat-value {
+                margin: 0.42rem 0 0;
+                font-size: 1.3rem;
+                font-weight: 700;
+                color: #154761;
+                line-height: 1;
+            }
+
+            .insight-grid {
+                display: grid;
+                grid-template-columns: 1.35fr 1fr;
+                gap: 1rem;
+            }
+
+            .insight-panel {
+                border: 1px solid var(--card-border);
+                border-radius: 0.9rem;
+                background: var(--card-bg);
+                box-shadow: 0 12px 24px rgba(19, 63, 81, 0.12);
+                padding: 0.95rem 1rem;
+            }
+
+            .insight-title {
+                margin: 0;
+                font-size: 1.05rem;
+                color: #173c50;
+            }
+
+            .insight-subtitle {
+                margin: 0.35rem 0 0.9rem;
+                font-size: 0.82rem;
+                color: var(--muted);
+            }
+
+            .timeline-list {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+                display: grid;
+                gap: 0.65rem;
+            }
+
+            .timeline-item {
+                display: grid;
+                grid-template-columns: 5.1rem 1fr;
+                gap: 0.7rem;
+                align-items: center;
+                border: 1px solid #c9dbe7;
+                border-radius: 0.7rem;
+                background: #f5fbff;
+                padding: 0.58rem 0.65rem;
+            }
+
+            .timeline-time {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 0.5rem;
+                border: 1px solid #b9d2e1;
+                background: #e9f6ff;
+                color: #214c63;
+                font-size: 0.74rem;
+                font-weight: 700;
+                padding: 0.34rem 0.45rem;
+            }
+
+            .timeline-copy {
+                margin: 0;
+                font-size: 0.79rem;
+                color: #2d556a;
+                line-height: 1.35;
+            }
+
+            .checklist {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+                display: grid;
+                gap: 0.58rem;
+            }
+
+            .checklist li {
+                border: 1px solid #c9dbe7;
+                border-radius: 0.66rem;
+                background: #f5fbff;
+                padding: 0.62rem 0.68rem;
+                font-size: 0.79rem;
+                color: #2d556a;
+                font-weight: 600;
+                line-height: 1.35;
+            }
+
             .module-grid {
                 display: grid;
                 grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -237,6 +350,13 @@
                 font-size: 1.06rem;
                 font-weight: 700;
                 color: #15384d;
+            }
+
+            .module-subtitle {
+                margin: 0.34rem 0 0;
+                font-size: 0.78rem;
+                font-weight: 600;
+                color: #3f6377;
             }
 
             .module-features {
@@ -314,6 +434,19 @@
                 text-align: center;
             }
 
+            .feature-link-card {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-decoration: none;
+                color: #264c61;
+                min-height: 4rem;
+            }
+
+            .feature-link-card:hover {
+                background: linear-gradient(150deg, #f0fbff 0%, #dff4ff 100%);
+            }
+
             .photo-strip {
                 padding: 0 1rem 1rem;
                 display: grid;
@@ -348,6 +481,353 @@
                 padding: 0.52rem 0.88rem;
             }
 
+            .booking-flash {
+                border: 1px solid #b8dbbf;
+                border-radius: 0.75rem;
+                background: #e9fbea;
+                color: #1a5b2f;
+                font-size: 0.83rem;
+                font-weight: 600;
+                padding: 0.72rem 0.9rem;
+            }
+
+            .booking-layout {
+                display: grid;
+                grid-template-columns: 0.95fr 1.05fr;
+                gap: 1rem;
+            }
+
+            .booking-panel {
+                border: 1px solid var(--card-border);
+                border-radius: 0.9rem;
+                background: var(--card-bg);
+                box-shadow: 0 12px 24px rgba(19, 63, 81, 0.12);
+                overflow: hidden;
+            }
+
+            .booking-form {
+                padding: 0.9rem 1rem 1rem;
+                display: grid;
+                gap: 0.78rem;
+            }
+
+            .booking-field {
+                display: grid;
+                gap: 0.28rem;
+            }
+
+            .booking-field label {
+                font-size: 0.79rem;
+                font-weight: 700;
+                color: #264a5f;
+            }
+
+            .booking-field input,
+            .booking-field select,
+            .booking-field textarea,
+            .reschedule-form input {
+                width: 100%;
+                border: 1px solid #bed4e1;
+                border-radius: 0.62rem;
+                background: #f8fdff;
+                color: #1f455a;
+                font: inherit;
+                font-size: 0.86rem;
+                padding: 0.62rem 0.68rem;
+            }
+
+            .booking-field textarea {
+                resize: vertical;
+                min-height: 5rem;
+            }
+
+            .booking-field input:focus,
+            .booking-field select:focus,
+            .booking-field textarea:focus,
+            .reschedule-form input:focus {
+                outline: none;
+                border-color: #79bbdc;
+                box-shadow: 0 0 0 3px rgba(121, 187, 220, 0.22);
+            }
+
+            .booking-input-error {
+                border-color: #f3a7a7 !important;
+                background: #fff3f3 !important;
+            }
+
+            .booking-error {
+                margin: 0;
+                font-size: 0.75rem;
+                font-weight: 600;
+                color: #8a2323;
+            }
+
+            .booking-field-group {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 0.7rem;
+            }
+
+            .booking-submit {
+                border: 0;
+                border-radius: 0.6rem;
+                background: linear-gradient(145deg, var(--cta-start) 0%, var(--cta-end) 100%);
+                color: var(--cta-ink);
+                font: inherit;
+                font-size: 0.86rem;
+                font-weight: 700;
+                padding: 0.72rem 0.9rem;
+                cursor: pointer;
+                box-shadow: 0 10px 16px rgba(109, 69, 20, 0.16);
+            }
+
+            .booking-list {
+                padding: 0.2rem 1rem 1rem;
+                display: grid;
+                gap: 0.7rem;
+            }
+
+            .booking-item {
+                border: 1px solid #c4d7e4;
+                border-radius: 0.78rem;
+                background: #f8fdff;
+                padding: 0.72rem 0.78rem;
+                display: grid;
+                grid-template-columns: 1fr auto;
+                gap: 0.7rem;
+                align-items: start;
+            }
+
+            .booking-service {
+                margin: 0;
+                font-size: 0.9rem;
+                font-weight: 700;
+                color: #19445a;
+            }
+
+            .booking-meta {
+                margin: 0.28rem 0 0;
+                font-size: 0.77rem;
+                color: #45677b;
+            }
+
+            .booking-tags {
+                margin-top: 0.42rem;
+                display: flex;
+                gap: 0.4rem;
+                flex-wrap: wrap;
+            }
+
+            .booking-badge {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                border: 1px solid #bfd4e1;
+                border-radius: 999px;
+                background: #edf6fb;
+                color: #2c5569;
+                font-size: 0.7rem;
+                font-weight: 700;
+                line-height: 1;
+                padding: 0.32rem 0.5rem;
+            }
+
+            .booking-status-pending {
+                border-color: #f0d29d;
+                background: #fff7e8;
+                color: #8c5d1b;
+            }
+
+            .booking-status-confirmed {
+                border-color: #9fdfb3;
+                background: #effcf3;
+                color: #226338;
+            }
+
+            .booking-status-cancelled {
+                border-color: #f0b2b2;
+                background: #fff0f0;
+                color: #8b3030;
+            }
+
+            .booking-status-in_review {
+                border-color: #c6b4ef;
+                background: #f3eefe;
+                color: #4d3b87;
+            }
+
+            .booking-status-scheduled {
+                border-color: #9fd8e8;
+                background: #eefaff;
+                color: #1f5e73;
+            }
+
+            .booking-status-completed {
+                border-color: #a6ddb1;
+                background: #edfdf1;
+                color: #23613a;
+            }
+
+            .booking-concern {
+                margin: 0.48rem 0 0;
+                font-size: 0.77rem;
+                color: #45677b;
+                line-height: 1.4;
+            }
+
+            .booking-item-actions {
+                display: grid;
+                justify-items: end;
+                gap: 0.38rem;
+            }
+
+            .booking-item-actions form button {
+                border: 1px solid #b8cedb;
+                border-radius: 0.5rem;
+                background: #f1f8fc;
+                color: #2a5468;
+                font: inherit;
+                font-size: 0.74rem;
+                font-weight: 700;
+                padding: 0.36rem 0.58rem;
+                cursor: pointer;
+            }
+
+            .booking-reschedule summary {
+                list-style: none;
+                cursor: pointer;
+                font-size: 0.74rem;
+                font-weight: 700;
+                color: #1f6c91;
+            }
+
+            .booking-reschedule summary::-webkit-details-marker {
+                display: none;
+            }
+
+            .reschedule-form {
+                margin-top: 0.38rem;
+                display: grid;
+                gap: 0.35rem;
+                min-width: 12.5rem;
+            }
+
+            .reschedule-form button,
+            .booking-cancel {
+                border: 1px solid #b8cedb;
+                border-radius: 0.5rem;
+                background: #f1f8fc;
+                color: #2a5468;
+                font: inherit;
+                font-size: 0.74rem;
+                font-weight: 700;
+                padding: 0.36rem 0.58rem;
+                cursor: pointer;
+            }
+
+            .booking-cancel {
+                border-color: #edb3b3;
+                background: #fff0f0;
+                color: #8b3030;
+            }
+
+            .service-priority {
+                border-color: #bdd2df;
+                background: #edf6fb;
+            }
+
+            .service-priority-low {
+                border-color: #b3d9bf;
+                background: #eefcf3;
+                color: #2a6a3f;
+            }
+
+            .service-priority-medium {
+                border-color: #9fd8e8;
+                background: #edfaff;
+                color: #1f5c71;
+            }
+
+            .service-priority-high {
+                border-color: #f2ce95;
+                background: #fff6e8;
+                color: #8b5b16;
+            }
+
+            .service-priority-urgent {
+                border-color: #efaaaa;
+                background: #fff1f1;
+                color: #8a2e2e;
+            }
+
+            .booking-cancelled-note {
+                font-size: 0.74rem;
+                font-weight: 700;
+                color: #8b3030;
+            }
+
+            .health-status-form {
+                display: grid;
+                gap: 0.34rem;
+                min-width: 8.6rem;
+            }
+
+            .health-status-form select {
+                border: 1px solid #bed4e1;
+                border-radius: 0.5rem;
+                background: #f8fdff;
+                color: #1f455a;
+                font: inherit;
+                font-size: 0.74rem;
+                font-weight: 600;
+                padding: 0.34rem 0.5rem;
+            }
+
+            .health-status-form button {
+                border: 1px solid #b8cedb;
+                border-radius: 0.5rem;
+                background: #f1f8fc;
+                color: #2a5468;
+                font: inherit;
+                font-size: 0.74rem;
+                font-weight: 700;
+                padding: 0.34rem 0.55rem;
+                cursor: pointer;
+            }
+
+            .booking-status-resolved {
+                border-color: #9fdfb3;
+                background: #effcf3;
+                color: #226338;
+            }
+
+            .booking-status-archived {
+                border-color: #b4c7d5;
+                background: #edf4f8;
+                color: #3b5566;
+            }
+
+            .booking-empty {
+                margin: 0;
+                border: 1px dashed #b8cedb;
+                border-radius: 0.75rem;
+                background: #f6fbff;
+                color: #46697c;
+                font-size: 0.82rem;
+                font-weight: 600;
+                padding: 0.85rem;
+                text-align: center;
+            }
+
+            .contact-primary-check {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.45rem;
+                font-size: 0.78rem;
+                font-weight: 600;
+                color: #35586c;
+            }
+
             .portal-footer {
                 width: min(1300px, calc(100% - 1.7rem));
                 margin: 0.95rem auto 1.05rem;
@@ -358,19 +838,6 @@
                 flex-wrap: wrap;
                 color: #3d6174;
                 font-size: 0.78rem;
-            }
-
-            .footer-icons {
-                display: flex;
-                gap: 0.5rem;
-            }
-
-            .footer-icons span {
-                width: 1.9rem;
-                height: 1.8rem;
-                border-radius: 0.3rem;
-                border: 1px solid #c1d5e2;
-                background: linear-gradient(145deg, #f4fbff 0%, #deedf6 100%);
             }
 
             .footer-links {
@@ -386,6 +853,11 @@
 
             .footer-links a:hover {
                 text-decoration: underline;
+            }
+
+            .footer-copy {
+                font-size: 0.78rem;
+                color: #4b6d80;
             }
 
             @media (max-width: 950px) {
@@ -404,8 +876,13 @@
                 }
 
                 .module-grid,
-                .feature-only-grid {
+                .feature-only-grid,
+                .stats-grid {
                     grid-template-columns: repeat(2, minmax(0, 1fr));
+                }
+
+                .insight-grid {
+                    grid-template-columns: 1fr;
                 }
             }
 
@@ -420,12 +897,23 @@
 
                 .module-grid,
                 .feature-only-grid,
-                .photo-strip {
+                .photo-strip,
+                .stats-grid {
                     grid-template-columns: 1fr;
                 }
 
                 .module-photo {
                     height: 7.3rem;
+                }
+
+                .booking-layout,
+                .booking-field-group,
+                .booking-item {
+                    grid-template-columns: 1fr;
+                }
+
+                .booking-item-actions {
+                    justify-items: start;
                 }
 
                 .portal-footer {
@@ -466,18 +954,14 @@
             </main>
 
             <footer class="portal-footer">
-                <div class="footer-icons" aria-hidden="true">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
                 <nav class="footer-links" aria-label="Footer menu">
-                    <a href="#">Item 1</a>
+                    <a href="{{ route('medical-services.index') }}">Services</a>
                     <span>|</span>
-                    <a href="#">Item 2</a>
+                    <a href="{{ route('booking.index') }}">Booking</a>
                     <span>|</span>
-                    <a href="#">Item 3</a>
+                    <a href="{{ route('emergency-info.index') }}">Emergency</a>
                 </nav>
+                <span class="footer-copy">&copy; {{ date('Y') }} Campus Health Appointment System</span>
             </footer>
         </div>
     </body>
