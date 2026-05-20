@@ -1,66 +1,141 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Campus Health Appointment System
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Campus Health Appointment System (CHAS) is a Laravel-based web application for managing campus clinic appointments, student health records, medical service requests, and emergency contact information. The project was built for **IT 318L - Web Development** as a CRUD-focused Laravel and MySQL system.
 
-## About Laravel
+## Project Overview
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+The system provides a centralized student health portal where authenticated users can:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- book clinic appointments and track queue numbers
+- request campus medical services
+- maintain personal health records
+- manage emergency contact information
+- monitor account activity from a user dashboard
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+The application follows Laravel's MVC architecture and uses PHP, Blade, MySQL, migrations, Eloquent ORM, and built-in validation features.
 
-## Learning Laravel
+## Core Features
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- **Authentication and profile management**
+  - registration, login, logout, password reset, profile update, and email verification
+- **Dashboard**
+  - summary cards for appointments, service requests, health records, and emergency contacts
+  - latest activity and appointment timeline
+- **Medical Services module**
+  - create service requests
+  - view submitted requests
+  - update request status
+  - delete outdated requests
+- **Booking module**
+  - create appointments
+  - view current bookings
+  - reschedule appointments
+  - cancel appointments
+- **My Health module**
+  - create health records
+  - view saved records
+  - update record status
+  - delete records
+- **Emergency Info module**
+  - create emergency contacts
+  - view saved contacts
+  - set a primary contact
+  - delete contacts
+- **Login activity tracking**
+  - stores login metadata and logout timestamps
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## Technology Stack
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- PHP 8.1+
+- Laravel 10
+- Blade templating
+- MySQL
+- Eloquent ORM
+- Laravel Migrations
+- Tailwind CSS / Vite
+- PHPUnit feature tests
 
-## Laravel Sponsors
+## Database Summary
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+Main tables used by the system:
 
-### Premium Partners
+- `users`
+- `appointments`
+- `health_records`
+- `medical_service_requests`
+- `emergency_contacts`
+- `login_activities`
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+Relationships are centered on the `users` table through one-to-many Eloquent relationships for appointments, health records, service requests, emergency contacts, and login activity records.
 
-## Contributing
+## CRUD Coverage
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+The rubric requires at least one complete CRUD module. CHAS includes multiple CRUD-capable modules:
 
-## Code of Conduct
+- **Medical Services**
+  - Create: submit a service request
+  - Read: view service request history
+  - Update: change request status
+  - Delete: remove a request
+- **My Health**
+  - Create: add a health record
+  - Read: view record history
+  - Update: change record status
+  - Delete: remove a record
+- **Emergency Contacts**
+  - Create: save a contact
+  - Read: view contact list
+  - Update: set a contact as primary
+  - Delete: remove a contact
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## Validation and Access Control
 
-## Security Vulnerabilities
+- Form validation is handled through Laravel request validation rules.
+- Authenticated routes are protected with middleware.
+- Record ownership checks prevent users from editing or deleting other users' data.
+- Email verification is supported for protected dashboard access.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## Local Setup
 
-## License
+1. Install dependencies:
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```bash
+composer install
+npm install
+```
+
+2. Create your environment file and update database credentials:
+
+```bash
+copy .env.example .env
+php artisan key:generate
+```
+
+3. Run migrations:
+
+```bash
+php artisan migrate
+```
+
+4. Start the application:
+
+```bash
+php artisan serve
+npm run dev
+```
+
+## Testing
+
+Run the automated tests with:
+
+```bash
+php artisan test
+```
+
+The test suite is configured to use SQLite in memory by default. If your PHP installation does not include the SQLite driver, enable `pdo_sqlite` / `sqlite3` or configure a dedicated testing database before running the tests.
+
+## Repository Notes
+
+- This repository contains the Laravel source code, migrations, tests, and project documentation.
+- The project documentation aligned to the exam rubric is available in [PROJECT_DOCUMENTATION.md](PROJECT_DOCUMENTATION.md).
+- Deployment details are intentionally excluded from this repository documentation for this version of the project.
