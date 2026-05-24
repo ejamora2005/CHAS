@@ -10,6 +10,14 @@ if [ -z "${APP_KEY:-}" ]; then
     exit 1
 fi
 
+case "${APP_KEY}" in
+    base64:*)
+        ;;
+    *)
+        export APP_KEY="base64:${APP_KEY}"
+        ;;
+esac
+
 export PORT
 envsubst '${PORT}' < /etc/apache2/sites-available/render.conf.template > /etc/apache2/sites-available/000-default.conf
 printf 'Listen %s\n' "$PORT" > /etc/apache2/ports.conf
@@ -37,4 +45,3 @@ until php artisan migrate --force; do
 done
 
 exec apache2-foreground
-
