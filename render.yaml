@@ -1,0 +1,43 @@
+services:
+  - type: web
+    name: chas-free
+    runtime: docker
+    plan: free
+    region: singapore
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /
+    autoDeployTrigger: off
+    envVars:
+      - key: APP_NAME
+        value: Campus Health Appointment System
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: "false"
+      - key: APP_KEY
+        generateValue: true
+      - key: LOG_CHANNEL
+        value: stderr
+      - key: LOG_LEVEL
+        value: info
+      - key: DB_CONNECTION
+        value: pgsql
+      - key: DATABASE_URL
+        fromDatabase:
+          name: chas-free-db
+          property: connectionString
+      - key: SESSION_DRIVER
+        value: database
+      - key: SESSION_SECURE_COOKIE
+        value: "true"
+      - key: MAIL_MAILER
+        value: log
+      - key: QUEUE_CONNECTION
+        value: sync
+
+databases:
+  - name: chas-free-db
+    plan: free
+    region: singapore
+    databaseName: chas
+    user: chas

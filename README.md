@@ -124,6 +124,20 @@ php artisan serve
 npm run dev
 ```
 
+## Free Render Deploy
+
+This repository includes a `render.yaml` Blueprint and Docker setup for a free Render deployment.
+
+- Free Render web service
+- Free Render Postgres database
+- Auto-generated `APP_KEY`
+- Automatic database migrations during startup
+- Database-backed sessions for more reliable logins on Render
+
+Use this one-click link:
+
+`https://render.com/deploy?repo=https://github.com/ejamora2005/CHAS/tree/render-free-deploy`
+
 ## Testing
 
 Run the automated tests with:
